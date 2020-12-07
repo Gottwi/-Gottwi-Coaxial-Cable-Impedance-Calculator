@@ -14,10 +14,10 @@ macro bind(def, element)
 end
 
 # ╔═╡ d3eeb080-36e8-11eb-310e-695198ff1664
-using Images, FileIO
+using Images, FileIO, PlutoUI
 
 # ╔═╡ 1b67b8c0-387a-11eb-295f-878eca45e4f6
-img_path = "C:\\Users\\Norbi\\.julia\\environments\\v1.5\\coax.jpg"
+img_path = "https://raw.githubusercontent.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/main/coax.jpg"
 
 # ╔═╡ 726d42d0-387e-11eb-15fd-7ba5973271ce
 begin
@@ -37,8 +37,8 @@ begin
 	println()
 end
 
-# ╔═╡ 924be680-387c-11eb-3bd4-17cfa93635c1
-load(img_path)
+# ╔═╡ e978cee0-38a5-11eb-052d-75e6da8f220a
+Resource(img_path)
 
 # ╔═╡ e85d3dd0-3886-11eb-122d-114ff9f94a50
 "Outer Diameter (D), Inner Diameter (d) Values in milli meters (mm)"
@@ -71,12 +71,12 @@ begin
 end
 
 # ╔═╡ Cell order:
-# ╟─d3eeb080-36e8-11eb-310e-695198ff1664
+# ╠═d3eeb080-36e8-11eb-310e-695198ff1664
 # ╟─1b67b8c0-387a-11eb-295f-878eca45e4f6
 # ╟─726d42d0-387e-11eb-15fd-7ba5973271ce
 # ╟─0880c172-387f-11eb-00a2-2362ffb4c6b3
 # ╟─1ae32d30-387f-11eb-1c20-9d732d30e327
-# ╟─924be680-387c-11eb-3bd4-17cfa93635c1
+# ╟─e978cee0-38a5-11eb-052d-75e6da8f220a
 # ╠═e85d3dd0-3886-11eb-122d-114ff9f94a50
 # ╟─f58bfb60-35fa-11eb-2fd6-517766948b8f
 # ╟─4c638d0e-35fe-11eb-3f9d-4b638ed3033d
