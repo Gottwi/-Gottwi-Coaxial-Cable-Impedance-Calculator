@@ -13,11 +13,11 @@ macro bind(def, element)
     end
 end
 
-# ╔═╡ 86d473c0-5781-11eb-3e20-b53b5978bb3e
-using Pkg
-
 # ╔═╡ ae4150e0-576d-11eb-078e-6faf6168efc5
 using Images, FileIO, PlutoUI
+
+# ╔═╡ 86d473c0-5781-11eb-3e20-b53b5978bb3e
+import Pkg;
 
 # ╔═╡ 8efa0600-5781-11eb-0d39-79fc34bdeb5f
 Pkg.add("Images")
