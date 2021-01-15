@@ -13,8 +13,20 @@ macro bind(def, element)
     end
 end
 
+# ╔═╡ 86d473c0-5781-11eb-3e20-b53b5978bb3e
+using Pkg
+
 # ╔═╡ ae4150e0-576d-11eb-078e-6faf6168efc5
 using Images, FileIO, PlutoUI
+
+# ╔═╡ 8efa0600-5781-11eb-0d39-79fc34bdeb5f
+Pkg.add("Images")
+
+# ╔═╡ 981283c0-5781-11eb-0714-5bed06897785
+Pkg.add("FileIO")
+
+# ╔═╡ 9e249f50-5781-11eb-37b8-ef302bc8a883
+Pkg.add("PlutoUI")
 
 # ╔═╡ f59c3900-576d-11eb-07a2-9f76e97658f7
 img_path = "https://raw.githubusercontent.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/main/coax.jpg"
@@ -115,6 +127,10 @@ md"""
 """
 
 # ╔═╡ Cell order:
+# ╟─86d473c0-5781-11eb-3e20-b53b5978bb3e
+# ╟─8efa0600-5781-11eb-0d39-79fc34bdeb5f
+# ╟─981283c0-5781-11eb-0714-5bed06897785
+# ╟─9e249f50-5781-11eb-37b8-ef302bc8a883
 # ╟─ae4150e0-576d-11eb-078e-6faf6168efc5
 # ╟─f59c3900-576d-11eb-07a2-9f76e97658f7
 # ╟─fee845ae-5774-11eb-1cea-43478b253779
