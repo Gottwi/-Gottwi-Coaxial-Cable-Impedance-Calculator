@@ -32,10 +32,10 @@ Pkg.add("PlutoUI")
 img_path = "https://raw.githubusercontent.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/main/coax.jpg"
 
 # ╔═╡ fee845ae-5774-11eb-1cea-43478b253779
-img_path1 = "https://github.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/blob/main/value%20table.jpg"
+img_path1 = "https://raw.githubusercontent.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/main/value%20table.jpg"
 
 # ╔═╡ 088f20c0-5775-11eb-3b95-d3ea1af0957d
-img_path2 = "https://github.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/blob/main/formula.jpg"
+img_path2 = "https://raw.githubusercontent.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/main/formula.jpg"
 
 # ╔═╡ 189662a0-576e-11eb-333b-53ca94e5e205
 begin
@@ -103,9 +103,6 @@ begin
 	string("Z = ",Z," Ω")
 end
 
-# ╔═╡ e29376f0-5774-11eb-149f-1fc274c1ce8a
-Resource(img_path1)
-
 # ╔═╡ 4352efe0-576e-11eb-2a13-812571ffa0e3
 Resource(img_path2)
 
@@ -125,6 +122,9 @@ md"""
 *L - Inductance in µH / metre*
 
 """
+
+# ╔═╡ e29376f0-5774-11eb-149f-1fc274c1ce8a
+Resource(img_path1)
 
 # ╔═╡ Cell order:
 # ╟─86d473c0-5781-11eb-3e20-b53b5978bb3e
@@ -147,6 +147,6 @@ md"""
 # ╟─395912d0-576e-11eb-1fd0-7132d4006563
 # ╟─4258b160-576e-11eb-123d-e34fccb0e9eb
 # ╟─43dce060-576e-11eb-3dd5-cffcbe8f62f3
-# ╟─e29376f0-5774-11eb-149f-1fc274c1ce8a
 # ╟─4352efe0-576e-11eb-2a13-812571ffa0e3
 # ╟─b2cbfd90-5777-11eb-30c5-335a07fed153
+# ╟─e29376f0-5774-11eb-149f-1fc274c1ce8a
