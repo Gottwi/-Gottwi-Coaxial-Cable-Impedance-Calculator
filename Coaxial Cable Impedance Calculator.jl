@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.12.11
+# v0.12.18
 
 using Markdown
 using InteractiveUtils
@@ -13,74 +13,124 @@ macro bind(def, element)
     end
 end
 
-# ╔═╡ d3eeb080-36e8-11eb-310e-695198ff1664
+# ╔═╡ ae4150e0-576d-11eb-078e-6faf6168efc5
 using Images, FileIO, PlutoUI
 
-# ╔═╡ 1b67b8c0-387a-11eb-295f-878eca45e4f6
+# ╔═╡ f59c3900-576d-11eb-07a2-9f76e97658f7
 img_path = "https://raw.githubusercontent.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/main/coax.jpg"
 
-# ╔═╡ 726d42d0-387e-11eb-15fd-7ba5973271ce
+# ╔═╡ fee845ae-5774-11eb-1cea-43478b253779
+img_path1 = "https://github.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/blob/main/value%20table.jpg"
+
+# ╔═╡ 088f20c0-5775-11eb-3b95-d3ea1af0957d
+img_path2 = "https://github.com/Gottwi/-Gottwi-Coaxial-Cable-Impedance-Calculator/blob/main/formula.jpg"
+
+# ╔═╡ 189662a0-576e-11eb-333b-53ca94e5e205
 begin
 	μ₀ = 12.566370614359e-7
 	println()
 end
 
-# ╔═╡ 0880c172-387f-11eb-00a2-2362ffb4c6b3
+# ╔═╡ 1d75ca90-576e-11eb-02ec-c389ea08a9df
 begin
 	c = 299792458
 	println()
 end
 
-# ╔═╡ 1ae32d30-387f-11eb-1c20-9d732d30e327
+# ╔═╡ 23af1d32-576e-11eb-2ded-a768ebec09b5
 begin
 	ϵ₀ = 8.854187812813e-12
 	println()
 end
 
-# ╔═╡ e978cee0-38a5-11eb-052d-75e6da8f220a
+# ╔═╡ 27299df0-576e-11eb-1d6f-01622aec1d82
 Resource(img_path)
 
-# ╔═╡ e85d3dd0-3886-11eb-122d-114ff9f94a50
-"Outer Diameter (D), Inner Diameter (d) Values in milli meters (mm)"
+# ╔═╡ bc8532b0-5778-11eb-35c5-f16c09c7814a
+md"""
+Outer Diameter (**D**), Inner Diameter (**d**) Values in milli meters (**mm**)
+"""
 
-# ╔═╡ f58bfb60-35fa-11eb-2fd6-517766948b8f
+# ╔═╡ 4e888ad0-577a-11eb-3e61-b5db1f89a3af
+md"""
+**Example:**
+**RG58**
+  
+**d** = 0.81 mm; **D** = 2.95 mm; **ϵᵣ** = 2.3;
+
+**C**  ≈ 99 pF/m; **L**  ≈ 259 µH/m; **Z**  ≈ 51 Ω;
+"""
+
+# ╔═╡ 30e587a0-576e-11eb-0b92-990fead62ca1
 d = (@bind d html"<input type=number >")
 
-# ╔═╡ 4c638d0e-35fe-11eb-3f9d-4b638ed3033d
+
+# ╔═╡ 357c26c2-576e-11eb-1dad-47c3d1f04837
 D = (@bind D html"<input type=number >")
 
-# ╔═╡ 4d20c28e-35fe-11eb-2ff0-35f2b24ffd2a
+
+# ╔═╡ 38d4c7a0-576e-11eb-1cf0-0dedb82c2504
 ϵᵣ = (@bind ϵᵣ html"<input type=number >")
 
-# ╔═╡ e47c0dfe-35ff-11eb-3a72-31f07f20035f
+
+# ╔═╡ 395912d0-576e-11eb-1fd0-7132d4006563
 begin
 	C = (2*π*ϵ₀*ϵᵣ/log(D/d)*1000000000000)
 	string("C = ",C," pF/m")
 end
 
-# ╔═╡ ffa295f0-35ff-11eb-286e-e533fac4d409
+# ╔═╡ 4258b160-576e-11eb-123d-e34fccb0e9eb
 begin
 	L = (μ₀/2*π*log(D/d)*100000000)
 	string("L = ",L," μH/m")
 end
 
-# ╔═╡ 264ecb10-3600-11eb-138a-514ad55c91af
+# ╔═╡ 43dce060-576e-11eb-3dd5-cffcbe8f62f3
 begin
 	Z = (L*10/C)^(1/2)*10
 	string("Z = ",Z," Ω")
 end
 
+# ╔═╡ e29376f0-5774-11eb-149f-1fc274c1ce8a
+Resource(img_path1)
+
+# ╔═╡ 4352efe0-576e-11eb-2a13-812571ffa0e3
+Resource(img_path2)
+
+# ╔═╡ b2cbfd90-5777-11eb-30c5-335a07fed153
+md"""
+
+*d - The outside diameter of the inner or center conductor*
+
+*D - Inside diameter of the shield*
+
+*εr - Relative Permeability of the dielectric between the inner and outer conductors*
+
+*Z - Characteristic impedance in Ω*
+
+*C - Capacitance in pF/Meter*
+
+*L - Inductance in µH / metre*
+
+"""
+
 # ╔═╡ Cell order:
-# ╠═d3eeb080-36e8-11eb-310e-695198ff1664
-# ╟─1b67b8c0-387a-11eb-295f-878eca45e4f6
-# ╟─726d42d0-387e-11eb-15fd-7ba5973271ce
-# ╟─0880c172-387f-11eb-00a2-2362ffb4c6b3
-# ╟─1ae32d30-387f-11eb-1c20-9d732d30e327
-# ╟─e978cee0-38a5-11eb-052d-75e6da8f220a
-# ╠═e85d3dd0-3886-11eb-122d-114ff9f94a50
-# ╟─f58bfb60-35fa-11eb-2fd6-517766948b8f
-# ╟─4c638d0e-35fe-11eb-3f9d-4b638ed3033d
-# ╟─4d20c28e-35fe-11eb-2ff0-35f2b24ffd2a
-# ╟─e47c0dfe-35ff-11eb-3a72-31f07f20035f
-# ╟─ffa295f0-35ff-11eb-286e-e533fac4d409
-# ╟─264ecb10-3600-11eb-138a-514ad55c91af
+# ╟─ae4150e0-576d-11eb-078e-6faf6168efc5
+# ╟─f59c3900-576d-11eb-07a2-9f76e97658f7
+# ╟─fee845ae-5774-11eb-1cea-43478b253779
+# ╟─088f20c0-5775-11eb-3b95-d3ea1af0957d
+# ╟─189662a0-576e-11eb-333b-53ca94e5e205
+# ╟─1d75ca90-576e-11eb-02ec-c389ea08a9df
+# ╟─23af1d32-576e-11eb-2ded-a768ebec09b5
+# ╟─27299df0-576e-11eb-1d6f-01622aec1d82
+# ╟─bc8532b0-5778-11eb-35c5-f16c09c7814a
+# ╟─4e888ad0-577a-11eb-3e61-b5db1f89a3af
+# ╟─30e587a0-576e-11eb-0b92-990fead62ca1
+# ╟─357c26c2-576e-11eb-1dad-47c3d1f04837
+# ╟─38d4c7a0-576e-11eb-1cf0-0dedb82c2504
+# ╟─395912d0-576e-11eb-1fd0-7132d4006563
+# ╟─4258b160-576e-11eb-123d-e34fccb0e9eb
+# ╟─43dce060-576e-11eb-3dd5-cffcbe8f62f3
+# ╟─e29376f0-5774-11eb-149f-1fc274c1ce8a
+# ╟─4352efe0-576e-11eb-2a13-812571ffa0e3
+# ╟─b2cbfd90-5777-11eb-30c5-335a07fed153
